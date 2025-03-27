@@ -2,6 +2,7 @@
 Takes collections of different types and merges them in a BFS style
 """
 
+
 # could simply use zip but decided to make recursion in a functional programming style using map to strip iterables
 def communicating_vessels(*iterables):
     if all(not itr for itr in
@@ -14,9 +15,11 @@ def communicating_vessels(*iterables):
             continue
     yield from interleave(*(map(lambda it: it[1:], iterables)))
 
+
 def main():
-    for it in interleave('ab', [1,2,3], ('@','%')):
+    for it in interleave('ab', [1, 2, 3], ('@', '%')):
         print(it)
+
 
 if __name__ == '__main__':
     main()

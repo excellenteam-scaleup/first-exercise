@@ -2,12 +2,13 @@
 Reads raw chunks of data and retrieves a hidden text
 """
 
+
 def parsle_tongue():
     chunk_size = 1024
     chars = []
     data = []
     is_sequential = False
-    with open('resources/logo.jpg','rb') as file:
+    with open('resources/logo.jpg', 'rb') as file:
         while True:
             chunk = file.read(chunk_size)
             for byte in chunk:
@@ -26,8 +27,10 @@ def parsle_tongue():
                 break
     return data
 
+
 def main():
     print(' '.join(parsle_tongue()))
+
 
 if __name__ == '__main__':
     main()

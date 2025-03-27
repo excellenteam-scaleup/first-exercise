@@ -9,17 +9,18 @@ def no_vinnigrete(date_src, date_dst):
     if delta < 0:
         print("Didn't figure how to turn time backwards yet...")
         return
-    date_middle = datetime.strptime(date_src,date_format) + timedelta(days = random.randint(0,delta))
+    date_middle = datetime.strptime(date_src, date_format) + timedelta(days=random.randint(0, delta))
     day = date_middle.strftime("%A")
     if day == "Monday":
         print("Ain't gettin' no vinaigrette today :(")
     else:
         print(date_middle.strftime(date_format))
 
+
 def main():
     date_src = input("Enter start date: ")
     date_dts = input("Enter end date: ")
-    no_vinnigrete(date_src, date_dts) # certainly monday
+    no_vinnigrete(date_src, date_dts)  # certainly monday
 
 
 if __name__ == '__main__':

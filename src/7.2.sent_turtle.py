@@ -12,28 +12,17 @@ class PostOffice:
         self.boxes = {user: [] for user in usernames}
 
     def send_message(self, sender, recipient, title, message_body, urgent=False):
-        """Send a message to a recipient.
+        if recipient not in self.boxes:
+            raise KeyError(f"Recipient '{recipient}' does not exist.")
 
-        :param str sender: The message sender's username.
-        :param str recipient: The message recipient's username.
-        :param str message_body: The body of the message.
-        :param urgent: The urgency of the message.
-        :type urgent: bool, optional
-        :return: The message ID, auto incremented number.
-        :rtype: int
-        :raises KeyError: if the recipient does not exist.
-        """
-        try:
-            user_box = self.boxes[recipient]
-        except KeyError:
-            print("Recipient does not exist.")
-        self.message_id = self.message_id + 1
+        user_box = self.boxes[recipient]
+        self.message_id += 1
         message_details = {
             'id': self.message_id,
-            'title': title,  # added title (obvious)
+            'title': title,
             'body': message_body,
             'sender': sender,
-            'unread': True  # added read/unread status
+            'unread': True
         }
         if urgent:
             user_box.insert(0, message_details)
@@ -56,8 +45,11 @@ class PostOffice:
         return messages
 
     def search_inbox(self, username, substr):
-        return [message for message in self.boxes[username] if
-                message['title'].find(substr) != -1 or message['body'].find(substr) != -1]
+        substr = substr.lower()
+        return [
+            message for message in self.boxes[username]
+            if substr in message['title'].lower() or substr in message['body'].lower()
+        ]
 
 
 def main():

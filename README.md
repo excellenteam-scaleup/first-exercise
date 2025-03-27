@@ -21,7 +21,24 @@ During the course we will utilize Linux based operating system (OS), to run and 
 ### Windows Installation
 1. Install [WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install
 ) , with Ubuntu distribution.
-2. [Install Pycharm](https://www.jetbrains.com/help/pycharm/installation-guide.html) on wsl
+2. Make sure you have a GUI system installed for WSL:
+   a. WSLg is built into WSL2 on Windows 11 (Good for you!)
+   b. Or install an X server on Windows like VcXsrv or Xming
+3. Launch WSL and install required dependencies:
+   sudo apt update
+   sudo apt install openjdk-17-jdk curl unzip -y
+4. Download and install PyCharm:
+   curl -L -o pycharm.tar.gz https://download.jetbrains.com/python/pycharm-community-2023.3.3.tar.gz
+   tar -xzf pycharm.tar.gz
+   cd pycharm-*/bin
+   ./pycharm.sh 
+   PyCharm will launch (if GUI is set up properly).
+5. Install Git in WSL 
+   If it’s not installed yet:
+      sudo apt update 
+      sudo apt install git -y
+6. Then verify:
+   git --version
 
 ### Mac Installation
 1. Follow the instruction presented in the following [video]( https://www.youtube.com/watch?v=LjL_N0OZxvY

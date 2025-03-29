@@ -3,9 +3,8 @@ import importlib.util
 import os
 
 
-SRC_DIR = 'src'
 def load_parsle_tongue():
-    file_path = os.path.join(os.path.dirname(__file__), SRC_DIR + '/5.3.parsle_tongue.py')  # Adjust path if needed
+    file_path = os.path.join(os.path.dirname(__file__), '../src/5.3.parsle_tongue.py')  # Adjust path if needed
     spec = importlib.util.spec_from_file_location("parsle_tongue", file_path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -23,7 +22,7 @@ class MyTestCase(unittest.TestCase):
         original_dir = os.getcwd()  # Save current directory
         print("Starting in:", os.getcwd())
         try:
-            os.chdir(SRC_DIR)  # Change to new directory
+            os.chdir("src")  # Change to new directory
             print("Now in:", os.getcwd())  # Perform actions in new directory
 
             result = parsle_tongue()

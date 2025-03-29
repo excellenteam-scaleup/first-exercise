@@ -3,7 +3,7 @@ import importlib.util
 import os
 
 
-SRC_DIR = '../src'
+SRC_DIR = 'src'
 def load_parsle_tongue():
     file_path = os.path.join(os.path.dirname(__file__), SRC_DIR + '/5.3.parsle_tongue.py')  # Adjust path if needed
     spec = importlib.util.spec_from_file_location("parsle_tongue", file_path)

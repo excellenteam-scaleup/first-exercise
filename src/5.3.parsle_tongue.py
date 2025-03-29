@@ -8,7 +8,9 @@ def parsle_tongue():
     chars = []
     data = []
     is_sequential = False
-    with open('resources/logo.jpg', 'rb') as file:
+    import os
+    print(os.getcwd())  # Prints the current working directory
+    with open('./logo.jpg', 'rb') as file:
         while True:
             chunk = file.read(chunk_size)
             for byte in chunk:

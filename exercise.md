@@ -13,7 +13,7 @@ You need to hand in these 11 exercises from weeks 5, 6, and 7 of the notebooks. 
 - **5.1** - זו הדרך (*thats_the_way*), אין לי וִנִגְרֶט (*no_vinnigrete*)
 - **5.2** - *cup of join* (*cup_of_join*), חתכת עוגה (*piece_of_cake*)
 - **5.3** - לחששנית (*parsle_tongue*)
-- **5.4** - כלים שלובים (*communicating_vessels*)
+- **5.4** - כלים שלובים (*interleaves, generator_interleaves*)
 
 ### Week 6
 

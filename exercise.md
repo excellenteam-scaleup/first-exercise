@@ -2,7 +2,7 @@
 
 **“Yam Mesika”** is a Hebrew Python tutorial that contains exercises and explanations.
 
-[GitHub Repository](https://github.com/PythonFreeCourse/Notebooks)
+[The Notebooks](https://github.com/PythonFreeCourse/Notebooks)
 
 You need to hand in these 11 exercises from weeks 5, 6, and 7 of the notebooks. If your Python is rusty, I recommend reading weeks 3 and 4 as well.
 

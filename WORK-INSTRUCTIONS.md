@@ -1,17 +1,12 @@
-# CONTRIBUTING
+# DEVELOPMENT INSTRUCTIONS
 
-This file presents a few guidelines you need to follow, so that your contribution will utilize Firebase Hosting workflows and will be easy to merge with the contribution of others.
+This file presents a few guidelines you need to follow, so that your workflow in git will be smooth. 
 
 ## Workflow
  ### GitHub Flow
- In our project, we use a structured branching strategy involving `release`, `main`, and feature branches. The `main` branch serves as the primary development branch where all the feature development takes place. Contributors create feature branches off of `main` for each new feature or bug fix. After completing the development, the changes are merged back into `main` through pull requests.
+ In our project, we use a structured branching strategy involving `main`, and feature branches. The `main` branch serves as the primary development branch where all the feature development takes place. Contributors create feature branches off of `main` for each new feature or bug fix. After completing the development, the changes are merged back into `main` through pull requests.
 
-For releases, we use the `release` branch, which represents the production-ready state of our application. When it's time to deploy, the latest stable version of code from `main` is merged into `release`
-
-
- #### Updating the Master Branch:
-
- Here’s how to update the main branch using this workflow:
+#### Updating the main Branch:
 
  1. **Create a Feature Branch:**
     - From  `main` branch, create a new branch. This is where you'll work on your changes.
@@ -23,13 +18,17 @@ For releases, we use the `release` branch, which represents the production-ready
 
  2. **Develop Your Feature:**
     - Make your changes in this feature branch. Commit these changes to the branch.
+    - The -p flag for the git add is used to pick the specific changes you want. Use h command in the
+    - interactive shell that opens up after the usage of the command. 
+    - make sure to add only the specific changes you want. 
     ```bash
-    git add .
+    git add -p 
     git commit -m "Your commit message"
     ```
 
  3. **Create a Pull Request (PR):**
     - Push your branch to the remote repository and open a pull request to the `main` branch.
+    - If you receive an error regarding upstream branches, follow the recommendation in the output using --set-upstream.
     ```bash
     git push origin your-feature-branch
     ```
@@ -37,35 +36,7 @@ For releases, we use the `release` branch, which represents the production-ready
 
  4. **Merge the PR:**
     - After Pull Request review
-    - Choose either **"Squash and merge"** or **"Rebase and merge"**.
-
- #### Updating the Production (Prod) Branch: 
-
- For deploying to production, the workflow involves merging changes from the `main` branch into a `release` branch. 
-
- 1. **Create a Pull Request to Prod Branch:** 
-    - From the `main` branch, create a new pull request to the `release` branch. 
-    ```bash 
-    git checkout main 
-    git pull origin main 
-    git push origin main  # Ensure the remote main is up to date 
-    ``` 
-    - On GitHub, create a new PR from `main` to `release` 
-
- 2. **Merge with a Merge Commit:** 
-    - Select "Create a merge commit" while merging the pull request on GitHub.
-
- 3. **Update Local Prod and Master Branches:** 
-    - After merging, make sure to update both your local `release` and `main` branches. This ensures that both branches reflect the current state of the repository after the merge. 
-    ```bash 
-    # Update local release branch 
-    git checkout release 
-    git pull origin release 
-
-    # Update local main branch 
-    git checkout main 
-    git merge origin release 
-    git push origin main 
+    - Choose **"Rebase and merge"**.
     ``` 
 #### Managing conflicts
 Here's how to manage a scenario, with `feature/one` already rebased and merged into `main`, and now needing to add changes from `feature/two` into `main`.
@@ -107,17 +78,3 @@ Then, create a pull request for `feature/two` into `main` as you did with `featu
 
 **Review and Merge the Pull Request:**
 Have your changes reviewed through the pull request process. If there are no additional conflicts or issues, merge `feature/two` into `main` using your project's preferred merge strategy - either squash and merge, or rebase and merge.
-
-#### Managing conflicts on Prod Branch
-`release` branch should be updated only by a pull request from `main` branch. Using such workflow, will prevent conflicts at merge between `main` and `release` branches.
-If there is a merge conflict between `main` branch and a `release` branch, you should raise a red flag and reconsider your workflow.
-
-
-#### Best Practices for Conflict Management:
-1. Keep Branches Short-Lived: The longer a branch lives separately from `main`, the higher the chances of conflicts. Try to merge feature branches back into `main` as soon as they're ready and tested.
-
-2. Regularly Pull Changes from `main` into Your Feature Branches: This can help minimize conflicts by keeping your feature branches up-to-date with the latest changes in `main`.
-
-3. `release` branch should be updated only by a pull request from `main` branch. Using such workflow, will prevent conflicts at merge between `main` and `release` branches.
-
-4. Consider using feature toggles to shorten `release` branch update cycle.

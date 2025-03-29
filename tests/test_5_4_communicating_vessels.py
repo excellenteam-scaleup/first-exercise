@@ -24,7 +24,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_single_iterable(self):
         result = list(interleave([10, 20, 30]))
-        generator_result = list(generator_interleave('ab', [1, 2, 3], ('@', '%')))
+        generator_result = list(generator_interleave([10, 20, 30]))
         self.assertEqual(result, [10, 20, 30])
         self.assertEqual(generator_result, [10, 20, 30])
 

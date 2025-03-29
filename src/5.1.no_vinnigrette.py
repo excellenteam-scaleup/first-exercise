@@ -9,6 +9,12 @@ def no_vinnigrete(date_src, date_dst):
     if delta < 0:
         print("Didn't figure how to turn time backwards yet...")
         return
+
+
+
+
+
+
     date_middle = datetime.strptime(date_src, date_format) + timedelta(days=random.randint(0, delta))
     day = date_middle.strftime("%A")
     if day == "Monday":

@@ -49,16 +49,7 @@ sudo apt install git -y
 git --version
 ```
 
-### Mac Installation
-1. Follow the instruction presented in the following [video]( https://www.youtube.com/watch?v=LjL_N0OZxvY
-), install Ubuntu (no GUI) version
-2. To install GUI, use following [guide](https://askubuntu.com/questions/53822/how-do-you-run-ubuntu-server-with-a-gui
-)
-3. In case you forgot the default credentials, read following [article](https://www.debugpoint.com/virtualbox-id-password/
-).
-4. [Install Pycharm](https://www.jetbrains.com/help/pycharm/installation-guide.html) inside the VM
-
-### Linux Installation
+### Linux/Mac Installation
 Congragulations, you made the right decision.
 1. [Install Pycharm](https://www.jetbrains.com/help/pycharm/installation-guide.html)
 
@@ -93,9 +84,8 @@ Please follow the guidelines in this section strictly.
 
 #### GitHub Configuration
 * The repository should include a `README.md` file at the root directory.
-* The repository should include a `CONTRIBUTING.md` file at the root directory.
 * You must have a `.gitignore` file, and there shouldn’t be any unnecessary files in the repository.
-* 🚨 **CRITICAL:** Repositories without a workflow file at `.github/workflows/pylint.yml` will not be graded. :(
+* 🚨 **CRITICAL:** Do not touch `.github/workflows` directory :(
 * You must have an `img` directory at the root directory.
 
 #### Project's Files

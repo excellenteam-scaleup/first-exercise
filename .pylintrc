@@ -2,10 +2,6 @@
 # Set the Python path if needed, or leave it blank to use system defaults
 
 [MESSAGES CONTROL]
-disable=
-    C0114,  # missing-module-docstring
-    C0115,  # missing-class-docstring
-    C0116   # missing-function-docstring
 
 [FORMAT]
 max-line-length=120
